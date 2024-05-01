@@ -1,0 +1,15 @@
+import qrcode
+import image
+qr = qrcode.QRCode(
+    version = 15, # the version of qr code, higher the number bigger the code image and complication
+    box_size = 10, #size of box wher qr code will be displayed
+    border = 5 # white part of image -- border in four sides
+
+)
+data = "https://github.com/" #path of github    
+
+qr.add_data(data)
+qr.make(fit = True)
+img = qr.make_image(fill = "black " ,back_color = "white")
+img.save("qrgit.png")
+
